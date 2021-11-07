@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {Image, Button, Form, Input } from 'antd'
 import styled from 'styled-components';
-import logo from '../../../public/RegisterLogo.png'
+import logo from '../mark.png'
 import Axios from 'axios'
 
 
