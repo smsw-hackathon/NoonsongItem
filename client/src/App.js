@@ -1,35 +1,36 @@
-import React from 'react'
+//import logo from './logo.svg';
+import './App.css';
 import {
   BrowserRouter as Router,
-  Routes,
+  Switch,
   Route,
   Link
 } from "react-router-dom";
 
-//import LandingPage from './components/LandingPage/LandingPage.js'
-//import LoginPage from './components/LoginPage/LoginPage.js';
-import RegisterPage from './components/RegisterPage/RegisterPage';
-
+import LandingPage from '../src/components/LandingPage/LandingPage'
+import LoginPage from '../src/components/LoginPage/LoginPage'
+import RegisterPage from '../src/components/RegisterPage/RegisterPage'
+//client\src\components\LandingPage\LandingPage.js
 function App() {
   return (
-    <div>
-      App.js
-    </div>
-    /*
     <Router>
       <div>
-        <Routes>
+        {/*
+          A <Switch> looks through all its children <Route>
+          elements and renders the first one whose path
+          matches the current URL. Use a <Switch> any time
+          you have multiple routes, but you want only one
+          of them to render at a time
+        */}
+        <Switch>
           <Route exact path="/" component={LandingPage} />
-          <Route exact path="/login" component={LoginPage} />
-          <Route exact path="/register" component={RegisterPage} />
-
-        </Routes>
+          <Route exact path="/LoginPage" component={LoginPage} />
+          <Route exact path="/RegisterPage" component={RegisterPage} />
+        </Switch>
       </div>
     </Router>
-    */
-  )
+  );
 }
 
-export default App
-
+export default App;
 
