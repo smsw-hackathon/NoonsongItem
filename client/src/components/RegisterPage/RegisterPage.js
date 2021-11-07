@@ -50,7 +50,9 @@ const RegisterPage = () =>{
             display: 'flex', justifyContent: 'center', alignItems: 'center',
             width: '100%', height: '100vh', background: '#011F48', flexDirection: 'column'
         }}>
-            <img src={logo} />
+            <img src={logo} width="250" height="300" mx-auto />
+            <br />
+            <br />
             <Form 
             form={form}
             name="register">

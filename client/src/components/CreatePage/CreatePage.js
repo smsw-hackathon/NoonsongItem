@@ -1,38 +1,49 @@
 import React, {useEffect} from 'react'
 import { Layout,Menu,Breadcrumb } from 'antd';
 import styled from 'styled-components';
+import logo from '../mark.png'
 import axios from 'axios'
 
+import { Upload, message } from 'antd';
+import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
 const { Header, Footer, Content } = Layout;
-const CreatePage = () =>{
+
+  const CreatePage = () =>{
     return(
-        <Layout className="layout">
+      <Layout className="layout">
             <StyledHeader>
-            <div className="logo" />
-            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['']}>
-                <Menu.Item>
+            <img src={logo} width="30px"/>
+            <StyledMenu theme="dark" mode="horizontal" defaultSelectedKeys={['']}>
+                <Item>
                     Home
-                </Menu.Item>
-                <Menu.Item>
+                </Item>
+                <Item>
                     MyPage
-                </Menu.Item>
-                <Menu.Item>
+                </Item>
+                <Item>
                     Create
-                </Menu.Item>
-            </Menu>
-            
+                </Item>
+            </StyledMenu>
             </StyledHeader>
             <Content style={{ padding: '0 50px' }}>
-            <div className="site-layout-content">Content</div>
-
+                
             </Content>
-            <Footer style={{ textAlign: 'center' }}>2021 SMSW</Footer>
+            <Footer style={{ textAlign: 'center' }}>Ant Design ?2018 Created by Ant UED</Footer>
         </Layout>
     )
 }
 
 const StyledHeader = styled(Header)`
     color: #011F48;
+`
+const StyledMenu = styled(Menu)`
+    float : right;
+    padding : 0px;
+`
+
+const Item = styled(Menu.Item)`
+    margin : 30px;
+    float : right;
 `
 
 export default CreatePage
