@@ -50,7 +50,7 @@ const RegisterPage = () =>{
             display: 'flex', justifyContent: 'center', alignItems: 'center',
             width: '100%', height: '100vh', background: '#012F48', flexDirection: 'column'
         }}>
-            <img src="./RegisterLogo.png"/>
+            <img src={logo} />
             <Form 
             form={form}
             name="register">
@@ -106,8 +106,7 @@ const RegisterPage = () =>{
                         Submit
                     </Button>
                 </Form.Item>
-            </Form>
-            
+            </Form>           
         </div>
     )
 }
@@ -123,25 +122,3 @@ const StyledButton = styled(Button)`
 `
 export default RegisterPage
 
-/*<StyledItem
-                name="confirm"
-                label="Confirm Password"
-                dependencies={['password']}
-                hasFeedback
-                rules={[
-                {
-                    required: true,
-                    message: 'Please confirm your password!',
-                },
-                ({ getFieldValue }) => ({
-                    validator(_, value) {
-                    if (!value || getFieldValue('password') === value) {
-                        return Promise.resolve();
-                    }
-                    return Promise.reject(new Error('The two passwords that you entered do not match!'));
-                    },
-                }),
-                ]}
-                >
-                    <Input.Password />
-                </StyledItem>*/
