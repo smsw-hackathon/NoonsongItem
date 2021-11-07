@@ -33,7 +33,6 @@ const LandingPage = () =>{
 
 const StyledHeader = styled(Header)`
     color: #012F48;
-   
 `
 const StyledMenu = styled(Menu)`
     float : right;
