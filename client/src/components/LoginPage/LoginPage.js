@@ -8,8 +8,6 @@ import { withRouter } from 'react-router';
 export default LoginPage
 
 function LoginPage() {
-    <img src={logo}></img>
-
     const dispatch=useDispatch();
     const [Email, setEmail] = useState("")
     const [Password, setPassword] = useState("")
@@ -39,6 +37,7 @@ function LoginPage() {
             display: 'flex', justifyContent: 'center', alignItems: 'center',
             width: '100%', height: '100vh', backgroundColor:'#012F48', fontColor:'white'
         }}>
+            <img src={logo} style={{width : '30%'}}></img>
         <Form
         name="basic"
         font={{color:'white'}}
