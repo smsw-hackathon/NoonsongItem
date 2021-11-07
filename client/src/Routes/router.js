@@ -8,7 +8,6 @@ const Router = () => (
             <Route exact path = "/landing" component={LandingPage} />
             <Route exact path ="/" component ={LoginPage}/>
             <Route exact path = "/register" component={RegisterPage} />
-            <Route exact path ="/create" component ={CreatePage}/>
 
         </Switch>
     </BrowserRouter>
