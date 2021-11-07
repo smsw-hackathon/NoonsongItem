@@ -123,4 +123,3 @@ const StyledButton = styled(Button)`
     color: white;
 `
 export default RegisterPage
-
