@@ -2,9 +2,9 @@ import React, {useEffect} from 'react'
 import { Layout,Menu,Breadcrumb } from 'antd';
 import styled from 'styled-components';
 import axios from 'axios'
-const { Header, Footer, Content } = Layout;
 
-const LandingPage = () =>{
+const { Header, Footer, Content } = Layout;
+const CreatePage = () =>{
     return(
         <Layout className="layout">
             <StyledHeader>
@@ -20,10 +20,13 @@ const LandingPage = () =>{
                     Create
                 </Menu.Item>
             </Menu>
+            
             </StyledHeader>
             <Content style={{ padding: '0 50px' }}>
+            <div className="site-layout-content">Content</div>
+
             </Content>
-            <Footer style={{ textAlign: 'center' }}>Ant Design ?2018 Created by Ant UED</Footer>
+            <Footer style={{ textAlign: 'center' }}>2021 SMSW</Footer>
         </Layout>
     )
 }
@@ -32,4 +35,4 @@ const StyledHeader = styled(Header)`
     color: #011F48;
 `
 
-export default LandingPage
+export default CreatePage

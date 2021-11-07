@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { LandingPage, LoginPage, RegisterPage } from './index';
+import { LandingPage, LoginPage, RegisterPage,CreatePage } from './index';
 
 const Router = () => (
     <BrowserRouter>
@@ -8,6 +8,8 @@ const Router = () => (
             <Route exact path = "/landing" component={LandingPage} />
             <Route exact path ="/login" component ={LoginPage}/>
             <Route exact path = "/register" component={RegisterPage} />
+            <Route exact path ="/create" component ={CreatePage}/>
+
         </Switch>
     </BrowserRouter>
     
