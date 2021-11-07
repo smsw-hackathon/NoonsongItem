@@ -104,8 +104,8 @@ const RegisterPage = () =>{
                     />
                 </StyledItem>
                 <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-                    <Button type="text" htmlType="submit" color="white" onClick={onSubmitHandler}>
-                        Submit
+                    <Button type="text" htmlType="submit" onClick={onSubmitHandler}>
+                      <p style={{color:'white'}}>Submit</p>
                     </Button>
                 </Form.Item>
             </Form>           
@@ -123,4 +123,3 @@ const StyledButton = styled(Button)`
     color: white;
 `
 export default RegisterPage
-

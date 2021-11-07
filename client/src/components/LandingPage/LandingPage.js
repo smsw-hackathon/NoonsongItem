@@ -34,7 +34,6 @@ const LandingPage = () =>{
 const StyledHeader = styled(Header)`
     color: #012F48;
 `
-
 const StyledMenu = styled(Menu)`
     float : right;
     padding : 0px;
@@ -44,5 +43,4 @@ const Item = styled(Menu.Item)`
     margin : 30px;
     float : right;
 `
-
 export default LandingPage

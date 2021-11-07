@@ -45,9 +45,9 @@ function LoginPage(props) {
 
           <div style={{
             display: 'flex', justifyContent: 'center', alignItems: 'center',
-            width: '100%', height: '100vh', backgroundColor:'#012F48', fontColor:'white'
+            width: '100%', height: '100vh', backgroundColor:'#011F48', fontColor:'white'
         }}>
-            <img src={logo} style={{width : '30%'}}></img>
+        <img src={logo} width="250" height="300" mx-auto />
         <Form
         name="basic"
         font={{color:'white'}}
