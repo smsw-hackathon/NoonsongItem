@@ -48,7 +48,7 @@ const RegisterPage = () =>{
     return(
         <div style={{
             display: 'flex', justifyContent: 'center', alignItems: 'center',
-            width: '100%', height: '100vh', background: '#012F48', flexDirection: 'column'
+            width: '100%', height: '100vh', background: '#011F48', flexDirection: 'column'
         }}>
             <img src={logo} />
             <Form 
