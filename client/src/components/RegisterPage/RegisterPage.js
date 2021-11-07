@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
+import {Image, Button, Form, Input } from 'antd'
+import styled from 'styled-components';
+import logo from '../../../public/RegisterLogo.png'
 import Axios from 'axios'
-import { useDispatch } from 'react-redux'
 
-function RegisterPage(props){
-    const dispatch = useDispatch()
 
+const RegisterPage = () =>{
+    const [form] = Form.useForm();
     const [Nickname, setNickname] = useState("")
     const [Email, setEmail] =useState("")
     const [Password, setPassword] = useState("")
-    const [ConfirmPassword, setConfirmPassword] = useState("")
 
     const onNicknameHandler = (event) =>{
-        setEmail(event.currentTarget.value)
+        setNickname(event.currentTarget.value)
     }
     const onEmailHandler = (event) =>{
         setEmail(event.currentTarget.value)
@@ -19,15 +20,10 @@ function RegisterPage(props){
     const onPasswordHandler = (event) =>{
         setPassword(event.currentTarget.value)
     }
-    const onConfirmPasswordHandler = (event) =>{
-        setPassword(event.currentTarget.value)
-    }
-/*
+
     const onSubmitHandler = (event) => {
         event.preventDefault();
-        if(Password !== ConfirmPassword){
-            return alert("!!!!!!!");
-        }
+
         console.log('Nickname', Nickname)
         console.log('Email', Email)
         console.log('Password', Password)
@@ -37,8 +33,7 @@ function RegisterPage(props){
             email: Email,
             password: Password
         }
-        /*
-        dispatch(loginUser(body))
+        /*dispatch(loginUser(body))
             .then(response => {
                 if (response.payload.loginSuccess) {
                     props.history.push('/')
@@ -47,31 +42,106 @@ function RegisterPage(props){
                     alert('Error')
                 }
             })
-    }*/
+            */
+    }
 
-    return (
+    return(
         <div style={{
             display: 'flex', justifyContent: 'center', alignItems: 'center',
-            width: '100%', height: '100vh'
+            width: '100%', height: '100vh', background: '#012F48', flexDirection: 'column'
         }}>
-            <form style={{ display: 'flex', flexDirection: 'column'}}
-            >
-                <label>Nickname</label>
-                <input type="nickname" value={Nickname} onChange={onNicknameHandler} />
-                <label>Sookmyung Email</label>
-                <input type="email" value={Email} onChange={onEmailHandler} />
-                <label>Password</label>
-                <input type="password" value={Password} onChange={onPasswordHandler} />
-                <label>Confirm Password</label>
-                <input type="password" value={ConfirmPassword} onChange={onConfirmPasswordHandler} />
-
-                <br />
-                <button>
-                    Login
-                </button>
-            </form>
+            <img src="./RegisterLogo.png"/>
+            <Form 
+            form={form}
+            name="register">
+                <StyledItem
+                Sname="email"
+                label="E-mail"
+                rules={[
+                {
+                type: 'email',
+                message: '@sm.ac.kr',
+                },
+                {
+                required: true,
+                message: 'Please input your E-mail!',
+                },
+                ]}
+                >
+                    <Input 
+                    value={Email}
+                    onChange={onEmailHandler}
+                    />
+                </StyledItem>
+                <StyledItem
+                Sname="password"
+                label="Password"
+                rules={[
+                {
+                required: true,
+                message: 'Please input your password!',
+                },
+                ]}
+                hasFeedback
+                >
+                    <Input.Password 
+                    value={Password}
+                    onChange={onPasswordHandler}
+                    />
+                </StyledItem>
+            
+                <StyledItem
+                Sname="nickname"
+                label="Nickname"
+                tooltip="What do you want others to call you?"
+                rules={[{ required: true, message: 'Please input your nickname!', whitespace: true }]}
+                >
+                    <Input 
+                    value={Nickname}
+                    onChange={onNicknameHandler}
+                    />
+                </StyledItem>
+                <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+                    <Button type="text" htmlType="submit" color="white" onClick={onSubmitHandler}>
+                        Submit
+                    </Button>
+                </Form.Item>
+            </Form>
+            
         </div>
     )
 }
 
+const StyledItem = styled(Form.Item)`
+    color: white;
+`
+const Sname = styled(Form.Item.name)`
+    color: white;
+`
+const StyledButton = styled(Button)`
+    color: white;
+`
 export default RegisterPage
+
+/*<StyledItem
+                name="confirm"
+                label="Confirm Password"
+                dependencies={['password']}
+                hasFeedback
+                rules={[
+                {
+                    required: true,
+                    message: 'Please confirm your password!',
+                },
+                ({ getFieldValue }) => ({
+                    validator(_, value) {
+                    if (!value || getFieldValue('password') === value) {
+                        return Promise.resolve();
+                    }
+                    return Promise.reject(new Error('The two passwords that you entered do not match!'));
+                    },
+                }),
+                ]}
+                >
+                    <Input.Password />
+                </StyledItem>*/
