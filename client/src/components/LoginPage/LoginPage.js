@@ -1,13 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../_actions/user_actions';
 import { Form, Input, Button, Checkbox } from 'antd';
 import logo from '../mark.png';
+import * as URL from '../../config.js';
 import ColumnGroup from 'rc-table/lib/sugar/ColumnGroup';
 import { withRouter } from 'react-router';
+import axios from 'axios';
 export default LoginPage
 
-function LoginPage() {
+function LoginPage(props) {
+
+    useEffect(() => {
+        axios.post(URL)
+        .then(response => console.log(response.data))
+    }, [])
+
     const dispatch=useDispatch();
     const [Email, setEmail] = useState("")
     const [Password, setPassword] = useState("")
@@ -20,17 +28,19 @@ function LoginPage() {
         setPassword(event.currentTarget.value)
     }
 
-    const onsubmitHandler = (event)=>{
+    const onsubmitHandler = (event) => {
         event.preventDefault();
-
+        
         let body = {
-            email: Email,
-            password: Password
+            email : Email,
+            pw : Password
         }
         dispatch(loginUser(body))
+            .then(response => {
+                console.log(response)
+            })
     }
-    //<img src={require("../public/img/mark.png").default}/>
-
+  
     return (
 
           <div style={{
@@ -62,12 +72,12 @@ function LoginPage() {
         >
           <Input.Password type="password" size={"large"} value={Password} size={50} onChange={onPasswordHandler}  />
         </Form.Item>
-  
         <Form.Item wrapperCol={{ offset: 12, span: 16 }}>
-          <Button type="text" htmlType="submit">
+          <Button type="text" htmlType="submit" onClick={onsubmitHandler}>
               <p style={{color:'white'}}>Login</p>
           </Button>
         </Form.Item>
+        
       </Form>
       </div>
 
