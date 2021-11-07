@@ -1,18 +1,14 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../_actions/user_actions';
-//import { Button } from 'antd';
 import { Form, Input, Button, Checkbox } from 'antd';
+import logo from '../mark.png';
 import ColumnGroup from 'rc-table/lib/sugar/ColumnGroup';
 import { withRouter } from 'react-router';
-
-//import smlogo from 'img/mark.png';
 export default LoginPage
 
-  //  <img src={smlogo} alt="smlogo"/>
 function LoginPage() {
-  //  <img src={smlogo}/> 
-    <img src='img/mark.png'></img>
+    <img src={logo}></img>
 
     const dispatch=useDispatch();
     const [Email, setEmail] = useState("")
